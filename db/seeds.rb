@@ -11,3 +11,5 @@ users = []
   name = Faker::Name.name
   users.push User.create(name: name, email: Faker::Internet.email(name), password: '12345678', password_confirmation: '12345678')
 end
+
+admin_user = User.create(name: 'Admin', email: 'admin@example.com', password: 'adminadmin', password_confirmation: 'adminadmin', admin: true)
