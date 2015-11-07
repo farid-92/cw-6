@@ -1,0 +1,41 @@
+<h1><%= @user.name %>
+
+  <% if user_signed_in? && current_user.id == @user.id %>
+
+<%= link_to 'Edit', edit_user_registration_path(current_user), class: 'btn btn-primary ' %>
+
+  <% end %>
+</h1>
+<p>My photos:
+  <% if user_signed_in?  && current_user.id == @user.id  %>
+     <%= link_to 'Create new photo', new_gallery_path, class: 'btn btn-primary ' %>
+  <% end %>
+</p>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Photo</th>
+    <th>Title</th>
+    <% if user_signed_in?  && current_user.id == @user.id  %>
+    <th style="width: 100px;">Actions</th>
+    <% end %>
+  </tr>
+  <% @user.galleries.each do |photo| %>
+          <tr>
+            <td><%= image_tag photo.image.url(:medium), size: '100' %></td>
+            <td><%= photo.title %></td>
+            <% if user_signed_in?   && current_user.id == @user.id %>
+            <td>
+              <%= link_to 'Delete', gallery_path(photo), method: :delete, data: {confirm: 'Are you sure?'} %>
+            </td>
+            <% end %>
+          </tr>
+  <% end %>
+</table>
+    <hr/>
+
+
+<div>
+  <%= link_to 'Back to list', root_url %>
+</div>

@@ -1,0 +1,36 @@
+<h1> Photo gallery:</h1>
+<div class="row">
+
+  <div class="">
+    <div class="row">
+      <div class="col-sm-12 products-pagination">
+            <%= will_paginate @photos %>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <% @photos.each do |photo| %>
+
+          <div class="col-sm-4 product-item">
+            <div class="panel panel-default">
+              <div class="panel-body" align="center">
+                <div class="img"> <%= image_tag photo.image.url(:medium), size: '100' %></div>
+                <h3><%= photo.title %></h3>
+                <h4> By <%= photo.user.name %></h4>
+              </div>
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <%= will_paginate @photos %>
+      </div>
+    </div>
+  </div>
+
+</div>

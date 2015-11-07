@@ -18,4 +18,9 @@
 @import "bootstrap/theme";
 
 
-@import "gallery";
+@import "galleries";
+@import "user";
+
+body{
+  margin-top: 70px;
+}

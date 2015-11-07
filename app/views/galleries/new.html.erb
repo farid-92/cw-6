@@ -1,0 +1,18 @@
+
+<% if user_signed_in? %>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>New Photo</h1>
+      </div>
+    </div>
+
+    <hr />
+
+
+
+    <%= render 'form' %>
+
+<% else  %>
+    You don't have permission
+<% end  %>

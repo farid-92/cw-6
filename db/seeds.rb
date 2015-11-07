@@ -6,6 +6,17 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
+50.times do
+
+  Gallery.create(title: Faker::Commerce.product_name,
+                 user_id: 1
+  )
+end
+
+
+
 users = []
 5.times do
   name = Faker::Name.name

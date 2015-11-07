@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  root 'gallery#index'
+  root 'galleries#index'
+  resources :galleries
 
-  resources :gallery
+  get '/user/:id' => 'user#show', as: 'user_show'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
