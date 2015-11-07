@@ -23,7 +23,7 @@
   </tr>
   <% @user.galleries.each do |photo| %>
           <tr>
-            <td><%= image_tag photo.image.url(:medium), size: '100' %></td>
+            <td><%= link_to image_tag(photo.image.url(:medium), size: '100'), gallery_path(photo)  %></td>
             <td><%= photo.title %></td>
             <% if user_signed_in?   && current_user.id == @user.id %>
             <td>

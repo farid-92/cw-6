@@ -16,7 +16,7 @@
           <div class="col-sm-4 product-item">
             <div class="panel panel-default">
               <div class="panel-body" align="center">
-                <div class="img"> <%= image_tag photo.image.url(:medium), size: '100' %></div>
+                <div class="img"> <%= link_to image_tag(photo.image.url(:medium), size: '150'), gallery_path(photo)  %></div>
                 <h3><%= photo.title %></h3>
                 <h4> By <%= photo.user.name %></h4>
               </div>
