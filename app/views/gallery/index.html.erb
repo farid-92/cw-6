@@ -1,0 +1,13 @@
+<div class="row">
+  <% @users.each do |user| %>
+
+      <div class="col-sm-6 product-item">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3><%= user.name %></h3>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+</div>
